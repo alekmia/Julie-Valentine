@@ -1,0 +1,123 @@
+:root{
+  --bg: linear-gradient(120deg, #ffd6e0 0%, #fff6e8 100%);
+  --card: rgba(255,255,255,0.85);
+  --accent: #ff4d7e;
+  --muted: #6b6b6b;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+  --radius: 16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  overflow:hidden;
+}
+
+.wrap{width:100%;max-width:760px;padding:16px}
+
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding:36px;
+  box-shadow: var(--shadow);
+  text-align:center;
+  backdrop-filter: blur(6px);
+}
+
+.title{
+  margin:0;
+  font-size:2.2rem;
+  color:var(--accent);
+  letter-spacing:0.5px;
+}
+
+.subtitle{
+  color:var(--muted);
+  margin:12px 0 24px;
+  font-size:1.05rem;
+}
+
+.buttons{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.btn{
+  padding:12px 28px;
+  border-radius:10px;
+  border:0;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+  user-select:none;
+}
+
+.btn:active{transform:translateY(1px)}
+.btn-yes{
+  background: linear-gradient(90deg,#ff7aa2,#ff4d7e);
+  color:white;
+}
+.btn-no{
+  background:#fff;
+  color:#333;
+  border:1px solid #eee;
+}
+
+.hint{color:#888;margin:6px 0 0;font-size:0.9rem}
+
+/* modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.35);
+  z-index:30;
+}
+.modal.hidden{display:none}
+.modal-inner{
+  background:white;
+  padding:22px 26px;
+  border-radius:12px;
+  width:min(440px,92%);
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.18);
+}
+.modal-close{
+  position:absolute;
+  right:18px;
+  top:18px;
+  background:transparent;
+  border:0;
+  font-size:22px;
+  cursor:pointer;
+  color:#666;
+}
+.small{color:#666;font-size:0.9rem;margin-top:6px}
+
+/* confetti canvas occupies full screen but pointer-events none */
+.confetti{
+  position:fixed;
+  inset:0;
+  z-index:20;
+  pointer-events:none;
+}
+
+
+/* --- NO button movement without layout shift --- */
+.btn-no{
+  will-change: transform;
+  transition: transform 120ms ease;
+}

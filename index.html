@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Budeš můj Valentýn?</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <h1 class="title">Julie ❤️</h1>
+      <p class="subtitle">Budeš můj Valentýn?</p>
+
+      <div class="buttons">
+        <button id="yesBtn" class="btn btn-yes">Ano</button>
+        <button id="noBtn" class="btn btn-no">Ne</button>
+      </div>
+
+      <p class="hint">(Na 'Ne' netlačit)</p>
+    </div>
+  </main>
+
+  <!-- Modal shown after YES -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-inner">
+      <button id="closeModal" class="modal-close">&times;</button>
+      <h2>Hurá! 🎉</h2>
+      <p>Už začal plánovat 💖</p>
+      <!-- <p class="small">Share this page or screenshot and send it to them.</p> -->
+    </div>
+  </div>
+
+  <canvas id="confettiCanvas" class="confetti"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
